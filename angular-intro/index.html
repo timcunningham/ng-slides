@@ -18,14 +18,22 @@
 
 
     <h1>AngularJS</h1>
-    <h2>HTML &amp; JavaScript
-          for web-apps
-        rather than documents</h2>
+    <h2>What HTML would have been if it had been designed for building web applications</h2>
 
 
-    <p>Igor Minar</p>
+    <p>Tim Cunningham</p>
   </slide>
 
+	<slide title="Who I am? (Self love slide)">
+		<p>
+		@TimCunningham71 twitter
+		Vice President of Operations at IDMI
+		Adobe Community Professional
+		Codebass Radio
+		Bolttalks.com
+		CFmumboJumbo.com
+		</p>
+	</slide>
 
   <!-- **** -->
 
@@ -79,8 +87,23 @@
       Markup language for scientific documents
       shared over the net.
     </p>
+	
+    <p class="center">
+      CERN Physics - Tim Berners-Lee
+    </p>
+	<p class="center">
+     B52's, Bangles
+    </p>
   </slide>
 
+	<slide title="Pre popular internet">
+	 <center><img src="./img/HyperCard-image.png"></center>
+	</slide>
+	
+	<slide title="Pre popular internet">
+	 <center><img src="./img/bbsbulletin2.jpg"></center>
+	
+	</slide>
 
   <!-- **** -->
 
@@ -94,6 +117,14 @@
   </p>
   </slide>
 
+	<slide title="The Internet in 1995">
+	<p class="center">
+	 <center><img src="./img/amazon1995.gif"></center>
+    	Dialup- Prodigy, MSN, Earthlink, *maybe* AOL<br>
+		Coolio's Gangster Paradise, "Buddy Holly" by Weezer
+    </p>
+	
+	</slide>
 
   <!-- **** -->
 
@@ -111,7 +142,7 @@
   <!-- **** -->
 
 
-  <slide title="It's 2011, what's different?">
+  <slide title="It's 2012, what's different?">
     <center><img src="img/History_today.png"></center>
 
     <p class="center">
@@ -132,195 +163,17 @@
 
 
   <!-- **** -->
-
-
   <slide>
 
 
 
 
-
-
-    <h2>Let's look at some examples...</h2>
+    <h2><a href="http://127.0.0.1/angular-demo-slides" target="_">Let's look at some examples...</a></h2>
   </slide>
 
 
   <!-- **** -->
 
-
-  <slide title="Hello HTML!" class="no-logo">
-    <pre class="code">
-      <p>Hello World!</p>
-    </pre>
-  </slide>
-
-
-  <!-- **** -->
-
-
-  <slide title="Hello JavaScript!" class="no-logo">
-    <pre class="code">
-      <p id="greeting1"></p>
-
-      ===script===
-      var isIE = document.attachEvent;
-      var addListener = isIE
-        ? function(e, t, fn) {
-            e.attachEvent('on' + t, fn);}
-        : function(e, t, fn) {
-            e.addEventListener(t, fn, false);};
-      addListener(document, 'load', function(){
-        var greeting = document.getElementById('greeting1');
-        if (isIE) {
-          greeting.innerText = 'Hello World!';
-        } else {
-          greeting.textContent = 'Hello World!';
-        }
-      });
-      ===/script===
-    </pre>
-  </slide>
-
-
-  <!-- **** -->
-
-
-  <slide title="Hello jQuery!" class="no-logo">
-    <pre class="code">
-      <p id="greeting2"></p>
-
-      ===script===
-      $(function(){
-        $('#greeting2').text('Hello World!');
-      });
-      ===/script===
-    </pre>
-  </slide>
-
-
-  <!-- **** -->
-
-
-  <slide title="Hello AngularJS!" class="no-logo">
-    <pre class="code">
-      <p ng:init="greeting = 'Hello World!'">{{greeting}}</p>
-    </pre>
-  </slide>
-
-
-  <!-- **** -->
-
-
-  <slide title="Hello AngularJS MVC!" class="no-logo">
-    <pre class="code">
-      <p ng:controller="GreetingCtrl">{{greeting}}</p>
-
-      ===script===
-      function GreetingCtrl(){
-        this.greeting = 'Hello World!';
-      }
-      ===/script===
-    </pre>
-  </slide>
-
-
-  <!-- **** -->
-
-
-  <slide title="Hello jQuery form!" class="no-logo">
-    <pre class="code">
-    <input id="name3" value="John">
-    <p id="greeting3"></p>
-
-    ===script===
-    $(function(){
-      var name = $('#name3');
-      var greeting = $('#greeting3');
-
-      function update(){
-        greeting.text('Hello ' + name.val() + '!');
-      }
-      update();
-
-      name.bind('keydown', function(){
-        setTimeout(update, 0);
-      });
-    });
-    ===/script===
-    </pre>
-  </slide>
-
-
-  <!-- **** -->
-
-
-  <slide title="Hello AngularJS form!" class="no-logo">
-    <pre class="code">
-      <input name="firstName" value="John">
-      <p>Hello {{firstName}}!</p>
-    </pre>
-  </slide>
-
-
-  <!-- **** -->
-
-
-  <slide title="Hello jQuery form w/ dropdown!" class="no-logo">
-    <pre class="code">
-      <select id="salutation4">
-        <option>Hello</option>
-        <option>Greetings</option>
-        <option>Salut</option>
-        <option>Ahoj</option>
-        <option>Bonjour</option>
-      </select>
-      <input id="name4" value="John">
-      <p id="greeting4"></p>
-
-      ===script===
-      $(function(){
-        var salutation = $('#salutation4');
-        var name = $('#name4');
-        var greeting = $('#greeting4');
-
-        function update(){
-          greeting.text(
-              salutation.val() + ' ' +
-              name.val() + '!');
-        }
-        update();
-
-        name.bind('keydown', function(){
-          setTimeout(update, 0);
-        });
-        salutation.bind('change', update);
-      });
-      ===/script===
-    </pre>
-  </slide>
-
-
-  <!-- **** -->
-
-
-  <slide title="Hello AngularJS form w/ dropdown!" class="no-logo">
-    <pre class="code">
-      <select name="salutation">
-        <option>Hello</option>
-        <option>Greetings</option>
-        <option>Salut</option>
-        <option>Ahoj</option>
-        <option>Bonjour</option>
-      </select>
-
-      <input name="name" value="John">
-
-      <p>{{salutation}} {{name}}!</p>
-    </pre>
-  </slide>
-
-
-  <!-- **** -->
 
 
   <slide title="jQuery vs AngularJS">
@@ -377,39 +230,6 @@
   </slide>
 
 
-  <!-- **** -->
-
-
-  <slide title="Hello XHR!" class="no-logo">
-    <pre class="code">
-      <div ng:controller="GreeterCtrl">
-        <input name="greetingName">
-        <button ng:click="greet()">greet</button>
-        <p>{{greeting}}</p>
-      </div>
-
-      ===script===
-      function GreeterCtrl($xhr){
-        var self = this;
-
-        this.greetingName = 'World';
-
-        this.greet = function() {
-          var url = 'http://angularjs.org/greet.php';
-          url += '?callback=JSON_CALLBACK';
-          url += '&name=' + this.greetingName;
-          $xhr('JSON', url, function(code, response){
-            self.greeting = response.greeting;
-          });
-        }
-      }
-      ===/script===
-    </pre>
-  </slide>
-
-
-  <!-- **** -->
-
 
   <slide title="Testing">
 
@@ -432,7 +252,40 @@
   </slide>
 
 
+ 	<slide title="Templating">
+ 		
+		<ul>
+		<li>Dom based templating - Take HTML and extend it with "directives" and Add doubly curly as a databinding</li>
+		<li>Take HTML & let the browser parse it</li>
+		<li>Browser creates the DOM tree</li>
+		<li>Traverses the DOM tree in the browser and figure out where the data bind points are.</li>
+		</ul>
+	</slide>
   <!-- **** -->
+  
+  	<slide title="Under the covers">
+  	<pre>
+  	&lt;ul&gt;
+	&lt;li ng-repeat="person in people"&gt;
+		Hello, &lt;b&gt;{{person.fullname}}&lt;/b&gt;!
+	&lt;/li&gt;
+	&lt;/ul&gt;	
+  	</pre>
+	<ul>
+	<li>ng-repeat is a $compile directive
+	<li>Each member of the JSON array people and puts it into a temporary variable called person
+	<li>person.fullname is the databinding this is what the compiler understands and looks for, the {{}} 
+	<li>Updates value from the model is
+	</ul>
+	</slide>
+
+  <slide title="Why DOM based templating?">
+	<ul>	
+      <li>DOM based templating much faster than string based.
+	  <li>AngularJS was the first DOM based 
+	  <li>Knockout.js & batman.js have recently converted
+	 </ul>
+  </slide>
 
 
   <slide title="Separation of Concerns">
@@ -444,7 +297,20 @@
       DOM manipulation
     </p>
   </slide>
+  
+  
+  <slide title="Model Mutation observation">
+  <ul>
+  	<li>Fancy term for "Keep an eye on the model & do stuff when it changes"</li>
+	<li>Handles event listeners</li>
+	<li>Handles asynchronously </li>
+	<li>Checks when all changes are done</li>
+	<li>Updates view</li>
+	<li>Websockets note</li>
+  </ul>	
+  </slide>
 
+<!-- **** -->
 
   <!-- **** -->
 
@@ -456,13 +322,46 @@
       Inversion of control
       and
       removal of global state
+	  Work in safe scopes and inject those scopes into functions
     </p>
   </slide>
 
 
   <!-- **** -->
+  
+  <slide title="Reusable components -- in HTML!">
+  	<ul>
+  	<li>AngularJS gives you the power to extend HTML’s syntax with your own elements, attributes that adds behavior or transforms the DOM.  
+	<li>Want to write&lt;tab&gt;, &lt;calendar&gt;, or &lt;colorpicker&gt; instead of &lt;div&gt;&lt;div&gt;&lt;div&gt;...?  
+	<li>Want to attach keyboard shortcuts to any element by adding an attribute like key=’ctrl-s’?  
+	<li>You miss the &lt;blink&gt; tag?  
+	<li>All these things and more are possible.
+	</ul>
+	</slide> 
 
-
+	<slide title="Views and Routes."> 
+	<ul>
+		<li>AngularJS lets you switch sub-views in your app with a simple route configuration.  
+		<li>And you get URL deep-linking for free.
+	</ul>
+	</slide>
+	
+	<slide title="Routing">
+		<p>
+		<pre style="code">
+angular.module('phonecat', []).
+config(['$routeProvider', function($routeProvider) {
+$routeProvider.
+when('/phones', 
+	{templateUrl: 'partials/phone-list.html',   
+controller: PhoneListCtrl}).
+when('/phones/:phoneId', {templateUrl: 
+	'partials/phone-detail.html',
+	 controller: PhoneDetailCtrl}).
+otherwise({redirectTo: '/phones'});
+}]);	
+		</pre></p>
+	</slide>
   <slide title="Test Harness">
     <p>
       AngularJS has the following baked in:
@@ -472,7 +371,23 @@
       &nbsp;&nbsp;&nbsp;&#x2713; end-to-end testing
     </p>
   </slide>
+  
+  <slide title="Testacular">
+  	<p>
+  		Test runner for javascript
+		Testacular is framework agnostic - you can run any JS code. Provided an adapter for Jasmine
+		Control the whole workflow from command line or your IDE
+		
+  	</p>
+ </slide>
 
+	<slide title="Chrome Tool: AngularJS Batarang">
+		find and address performance bottlenecks
+		
+		visualize and debug applications
+		
+		Use experimental Chrome APIs
+	</slide>
 
   <!-- **** -->
 
@@ -514,13 +429,13 @@
   <!-- **** -->
 
 
-  <slide title="We are not done yet">
+  <slide title="Version 1.0.1">
     <p>
-      <strong>Warning</strong>:
-
-        We have yet to reach v1.0.
-        All APIs subject to change.
         Documentation improving fast.
+		Active mailing list
+		Past v1.0 (no more breaking changes)
+		Google uses internally
+		Now starting to use public facing
     </p>
   </slide>
 
@@ -531,10 +446,9 @@
   <slide title="Thank You!">
     <h2 class="center">
       AngularJS
-
       @angularjs
-
       <a href="http://angularjs.org">http://angularjs.org</a>
+	  <a href="http://builtwith.angularjs.org/">http://builtwith.angularjs.org/</a>
     </h2>
   </slide>
 </body>
